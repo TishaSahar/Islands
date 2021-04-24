@@ -1,9 +1,21 @@
-#include <stdio.h>
-#include "add.h"
+#include "islands.h"
+
+using namespace std;
 
 int main() {
-  printf("hello!\n");
-  printf("%d\n", add(1, 2));
+	int m, n;
+	cin >> m >> n;
 
-  return 0;
+	int** arr = new int* [m];
+	for (int i = 0; i < m; i++) {
+		arr[i] = new int[n];
+		for (int j = 0; j < n; j++) {
+			arr[i][j] = rand() % 1 + 0; //cin >> arr[i][j];
+		}
+		cout << endl;
+	}
+	out(arr, m, n);
+	cout << foundIslands(arr, m, n);
+
+	return 0;
 }
